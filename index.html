@@ -162,6 +162,9 @@
             align-items: center;
             overflow: hidden;
             padding-top: 80px;
+            background-image: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(0, 20, 50, 0.45) 50%, rgba(10, 10, 10, 0.85) 100%), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80');
+            background-size: cover;
+            background-position: 35% center;
         }
         .hero-bg {
             position: absolute;
@@ -254,7 +257,7 @@
             align-items: center;
             min-height: calc(100vh - 80px);
             padding-top: 60px;
-            padding-bottom: 40px;
+            padding-bottom: 65px;
             position: relative;
             z-index: 3;
         }
@@ -318,11 +321,11 @@
         .globe {
             width: 400px; height: 400px;
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, #111 0%, #000 100%);
-            box-shadow: inset -20px -20px 50px rgba(0,0,0,0.9),
-                        0 0 50px rgba(0,91,255,0.2);
+            background: radial-gradient(circle at 30% 30%, rgba(0, 91, 255, 0.12) 0%, rgba(0, 0, 0, 0.15) 100%);
+            box-shadow: inset -20px -20px 50px rgba(0,0,0,0.3),
+                        0 0 50px rgba(0,91,255,0.35);
             position: relative;
-            border: 1px solid rgba(0,91,255,0.1);
+            border: 1.5px solid rgba(0,91,255,0.25);
             animation: rotateGlobe 60s linear infinite;
         }
         .globe::before {
@@ -356,7 +359,7 @@
         /* Marquee Ticker */
         .ticker-wrap {
             background: var(--primary);
-            padding: 16px 0;
+            padding: 6px 0;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
@@ -366,8 +369,8 @@
             white-space: nowrap;
             animation: ticker 30s linear infinite;
             font-weight: 800;
-            font-size: 14px;
-            letter-spacing: 2px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
         .ticker-item {
@@ -790,8 +793,8 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        .custom-logo { height: 85px; width: 85px; border-radius: 50%; object-fit: cover; border: 2.5px solid rgba(255,255,255,0.25); box-shadow: 0 0 20px rgba(0, 91, 255, 0.4); transition: all 0.3s ease; }
-        .custom-logo:hover { transform: scale(1.05); border-color: var(--primary); }
+        .custom-logo { height: 60px; width: auto; object-fit: contain; transition: all 0.3s ease; }
+        .custom-logo:hover { transform: scale(1.05); }
         .dest-swiper { width: 100%; padding: 40px 0; }
         .swiper-slide { width: 320px; height: 450px; transition: transform 0.3s; }
         .swiper-slide-active { transform: scale(1.05); }
@@ -811,9 +814,8 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                min-height: calc(100vh - 80px);
                 padding-top: 140px;
-                padding-bottom: 60px;
+                padding-bottom: 85px;
             }
             .hero-text {
                 display: flex;
@@ -838,7 +840,7 @@
         @media (max-width: 768px) {
             .nav-logo { z-index: 1001; position: relative; }
             .nav-logo span { font-size: 16px !important; }
-            .custom-logo { height: 68px !important; width: 68px !important; }
+            .custom-logo { height: 50px !important; width: auto !important; }
             .navbar { background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); padding: 8px 0; }
             .nav-links {
                 position: fixed; top: 0; right: -250px; width: 250px; height: 100vh;
@@ -898,7 +900,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="assets/logo.jpg" alt="DTE Logo" class="custom-logo">
+                <img src="assets/logo.png" alt="DTE Logo" class="custom-logo" style="mix-blend-mode: screen;">
             </a>
             <div class="nav-links" id="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
@@ -914,7 +916,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <!-- Ticker -->
-        <div class="ticker-wrap" style="position: absolute; top: 80px; width: 100%; z-index: 10;">
+        <div class="ticker-wrap" style="position: absolute; bottom: 0; width: 100%; z-index: 10;">
             <div class="ticker">
                 <div class="ticker-item">Study in UK ★ Study in Australia ★ Study in Canada ★ Study in Germany ★ UG Admissions ★ Career Counseling ★ Visa Assistance ★ University Selection ★ Study in UK ★ Study in Australia ★ Study in Canada ★ Study in Germany ★ UG Admissions ★ Career Counseling ★ Visa Assistance ★ University Selection ★</div>
             </div>
