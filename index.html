@@ -6,9 +6,13 @@
     <title>Dream Team Education | Study Abroad & UG Admission Consultants</title>
     <meta name="description" content="Dream Team Education helps students make informed career and education decisions through expert counseling, university selection, admission support, and overseas education guidance. We specialize in UG admissions for UK, Germany, Australia, and Canada.">
     <meta name="keywords" content="Dream Team Education, Study Abroad, UG Admissions, Career Counseling, Overseas Education, Visa Support, Kukatpally, Hyderabad">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1920&q=80">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
@@ -16,14 +20,15 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #005BFF;
+            --primary-glow: rgba(0, 91, 255, 0.4);
             --bg-base: #0A0A0A;
             --surface: #111111;
             --surface-light: #181818;
             --text-primary: #FFFFFF;
             --text-secondary: #9CA3AF;
             --glow: rgba(0, 91, 255, 0.25);
-            --font-head: 'Poppins', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            --font-head: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
         }
         html {
             scroll-behavior: smooth;
@@ -35,7 +40,9 @@
             overflow-x: hidden;
             width: 100%;
             max-width: 100vw;
-            line-height: 1.6;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); }
         a { text-decoration: none; color: inherit; }
@@ -162,55 +169,55 @@
             align-items: center;
             overflow: hidden;
             padding-top: 80px;
-            background-image: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(0, 20, 50, 0.45) 50%, rgba(10, 10, 10, 0.85) 100%), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80');
-            background-size: cover;
-            background-position: 35% center;
         }
         .hero-bg {
             position: absolute;
             inset: 0;
-            z-index: -1;
+            z-index: 0;
         }
         .hero-bg .dot-grid {
             width: 100%; height: 100%;
-            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 30px 30px;
-            z-index: 2;
-            position: relative;
+            z-index: 3;
+            position: absolute;
+            inset: 0;
         }
         .hero-bg .radial-glow {
             position: absolute;
             top: 50%; right: -10%;
             width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(0,91,255,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0,91,255,0.12) 0%, transparent 70%);
             transform: translateY(-50%);
-            filter: blur(60px);
-            z-index: 2;
+            filter: blur(80px);
+            z-index: 3;
         }
         .hero-bg .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
+            filter: blur(90px);
             animation: float 10s infinite alternate ease-in-out;
-            z-index: 2;
+            z-index: 3;
         }
-        .orb-1 { width: 300px; height: 300px; background: rgba(0, 91, 255, 0.2); top: 20%; left: 10%; }
-        .orb-2 { width: 400px; height: 400px; background: rgba(0, 198, 255, 0.1); bottom: 10%; right: 20%; animation-delay: -5s; }
+        .orb-1 { width: 300px; height: 300px; background: rgba(0, 91, 255, 0.15); top: 20%; left: 10%; }
+        .orb-2 { width: 400px; height: 400px; background: rgba(0, 198, 255, 0.08); bottom: 10%; right: 20%; animation-delay: -5s; }
         .light-beam {
             position: absolute;
             top: -50%; left: -50%;
             width: 200%; height: 100px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent);
             transform: rotate(-45deg);
-            z-index: 2;
+            z-index: 3;
         }
         
-        /* Auto Scrolling Background Slideshow for Hero */
+        /* Auto Changing Background Slider with Ken Burns & Crossfade */
         .hero-slideshow {
             position: absolute;
             inset: 0;
-            z-index: 0;
+            z-index: 1;
             overflow: hidden;
+            transform: translateY(calc(var(--scroll-y, 0px) * 0.35));
+            will-change: transform;
         }
         .hero-slide {
             position: absolute;
@@ -218,36 +225,74 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            animation: heroSlideFade 24s infinite ease-in-out;
+            transform: scale(1.03);
+            animation: kenBurnsCrossfade 18s infinite ease-in-out;
         }
         .hero-slide:nth-child(1) {
-            background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80');
+            background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80');
             animation-delay: 0s;
         }
         .hero-slide:nth-child(2) {
-            background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80');
-            animation-delay: 6s;
+            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80');
+            animation-delay: 4.5s;
         }
         .hero-slide:nth-child(3) {
-            background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1600&q=80');
-            animation-delay: 12s;
+            background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80');
+            animation-delay: 9s;
         }
         .hero-slide:nth-child(4) {
-            background-image: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1600&q=80');
-            animation-delay: 18s;
+            background-image: url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1920&q=80');
+            animation-delay: 13.5s;
         }
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.8) 50%, rgba(10, 10, 10, 0.95) 100%);
-            z-index: 1;
+            background: radial-gradient(circle at 35% 35%, rgba(10, 10, 10, 0.55) 0%, rgba(5, 5, 5, 0.85) 100%);
+            z-index: 2;
         }
-        @keyframes heroSlideFade {
-            0% { opacity: 0; }
-            4% { opacity: 0.45; }
-            21% { opacity: 0.45; }
-            25% { opacity: 0; }
-            100% { opacity: 0; }
+        @keyframes kenBurnsCrossfade {
+            0% {
+                opacity: 0;
+                transform: scale(1.03) translate(0, 0);
+            }
+            8% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 1;
+            }
+            33% {
+                opacity: 0;
+                transform: scale(1.12) translate(1%, -1%);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Floating Light Particles */
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 198, 255, 0.06) 0%, transparent 70%);
+            filter: blur(5px);
+            animation: floatParticle 20s infinite alternate ease-in-out;
+        }
+        .particle-1 { width: 140px; height: 140px; top: 15%; left: 15%; animation-duration: 22s; }
+        .particle-2 { width: 200px; height: 200px; bottom: 25%; right: 20%; animation-duration: 28s; animation-delay: -5s; }
+        .particle-3 { width: 100px; height: 100px; top: 50%; left: 70%; animation-duration: 18s; animation-delay: -10s; }
+        
+        @keyframes floatParticle {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(40px, -50px) scale(1.15); }
+            100% { transform: translate(-25px, 25px) scale(0.9); }
         }
         
         .hero-content {
@@ -280,23 +325,79 @@
             box-shadow: 0 0 10px var(--primary);
             animation: pulse 2s infinite;
         }
+        
+        /* Premium World-Class Typography scaling & reveal load animations */
         .hero h1 {
-            font-size: clamp(40px, 5vw, 80px);
+            font-size: clamp(38px, 6vw, 74px);
             line-height: 1.1;
-            letter-spacing: -2px;
+            letter-spacing: -0.04em;
             margin-bottom: 24px;
+            font-weight: 800;
+            color: #ffffff;
         }
         .hero p.subheading {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
+            font-size: clamp(16px, 1.8vw, 20px);
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 44px;
+            line-height: 1.65;
+            letter-spacing: -0.015em;
+            max-width: 580px;
         }
+        
+        .reveal-load-1 {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: revealLoad 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .reveal-load-2 {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: revealLoad 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+        .reveal-load-3 {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: revealLoad 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.30s forwards;
+        }
+        @keyframes revealLoad {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
-            margin-bottom: 40px;
+            margin-bottom: 44px;
         }
+        
+        /* Button Hover Micro-interactions */
+        .hero .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #004ecc);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 91, 255, 0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(0, 91, 255, 0.4);
+        }
+        .hero .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 91, 255, 0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+        .hero .btn-outline {
+            background: rgba(255, 255, 255, 0.03);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero .btn-outline:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px) scale(1.02);
+        }
+        
         .trust-row {
             display: flex;
             flex-wrap: wrap;
@@ -932,6 +1033,11 @@
                 <div class="hero-slide"></div>
             </div>
             <div class="hero-overlay"></div>
+            <div class="hero-particles">
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+            </div>
             <div class="dot-grid"></div>
             <div class="radial-glow"></div>
             <div class="orb orb-1"></div>
@@ -939,18 +1045,18 @@
             <div class="light-beam"></div>
         </div>
         <div class="container hero-content">
-            <div class="hero-text reveal">
-                <div class="trust-badge">
+            <div class="hero-text">
+                <div class="trust-badge reveal-load-1">
                     <div class="dot"></div>
                     Trusted by 500+ Students Globally
                 </div>
-                <h1><span class="text-gradient">Shaping Careers.</span><br>Building Futures.</h1>
-                <p class="subheading">Dream Team Education helps students make informed career and education decisions through expert counseling, university selection, admission support, and overseas education guidance.</p>
-                <div class="hero-actions">
+                <h1 class="reveal-load-2"><span class="text-gradient">Shaping Careers.</span><br>Building Futures.</h1>
+                <p class="subheading reveal-load-2">Dream Team Education helps students make informed career and education decisions through expert counseling, university selection, admission support, and overseas education guidance.</p>
+                <div class="hero-actions reveal-load-3">
                     <a href="#contact" class="btn btn-primary">Get Free Counseling &rarr;</a>
                     <a href="#services" class="btn btn-outline">Explore Services</a>
                 </div>
-                <div class="trust-row">
+                <div class="trust-row reveal-load-3">
                     <div class="trust-item"><span>✓</span> Personalized Career Guidance</div>
                     <div class="trust-item"><span>✓</span> End-to-End Support</div>
                     <div class="trust-item"><span>✓</span> Visa Assistance</div>
@@ -1623,7 +1729,7 @@
 
     <!-- Scripts -->
     <script>
-        // Navbar Scroll Effect
+        // Navbar Scroll Effect & Hero Parallax
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -1631,6 +1737,8 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+            // Parallax scroll handler
+            document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
         });
 
         // Active Link Switching on Scroll
